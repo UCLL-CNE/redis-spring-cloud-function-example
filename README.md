@@ -79,7 +79,6 @@ To let your local Spring Boot application communicate with your Azure Managed Re
   spring.data.redis.password=<Managed Redis password key>
   spring.data.redis.ssl.enabled=true
 ```
-Remember, your resources/application.json file only applies to your local Java Spring Boot application. It does not apply to a deployed Azure Function app instance.
 
 ## Building and running the application locally
 
@@ -100,8 +99,3 @@ We can deploy the function again with the following command:
 ```bash
 mvn azure-functions:deploy
 ```
-
-As the Redis connection is configured in the resources/application.json file which normally gets loaded in in the Java Spring Boot application, we notice we don't have access to these in the deployed Azure Function app, resulting in a 500 internal server error. 
-Can you resolve this issue?
-There are multiple ways to resolve this, some require manual configuration and some can be done automatically.
-Perhaps CI/CD can come to the rescue for this?
